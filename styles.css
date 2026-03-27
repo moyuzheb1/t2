@@ -5,23 +5,22 @@
 }
 
 :root {
-    --primary-color: #333;
-    --secondary-color: #666;
-    --accent-color: #000;
-    --text-primary: #333;
+    --primary-color: #000;
+    --secondary-color: #333;
+    --text-primary: #000;
     --text-secondary: #666;
-    --bg-primary: #ffffff;
-    --bg-secondary: #f5f5f5;
-    --border-color: #e0e0e0;
-    --card-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    --hover-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --bg-primary: #fff;
+    --bg-secondary: #fafafa;
+    --border-color: #e5e5e5;
+    --card-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+    --hover-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
     background: var(--bg-secondary);
     color: var(--text-primary);
-    line-height: 1.6;
+    line-height: 1.5;
     -webkit-font-smoothing: antialiased;
 }
 
@@ -34,165 +33,185 @@ body {
 
 .header {
     background: var(--bg-primary);
-    padding: 30px 20px;
-    text-align: center;
-    border-bottom: 1px solid var(--border-color);
+    padding: 40px 20px 30px;
+    text-align: left;
+    border-bottom: 2px solid var(--primary-color);
 }
 
 .logo h1 {
-    font-size: 1.8rem;
-    font-weight: 600;
+    font-size: 2.5rem;
+    font-weight: 800;
     color: var(--text-primary);
-    letter-spacing: 1px;
+    letter-spacing: -0.5px;
+    line-height: 1;
+    margin-bottom: 8px;
 }
 
 .logo .subtitle {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     color: var(--text-secondary);
     text-transform: uppercase;
-    letter-spacing: 3px;
+    letter-spacing: 4px;
+    font-weight: 500;
 }
 
 .hero {
-    padding: 30px 20px;
+    padding: 40px 20px;
     background: var(--bg-primary);
 }
 
 .hero-content {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 30px;
 }
 
 .event-info {
-    text-align: center;
-    padding: 30px 20px;
+    padding: 20px 0;
     background: var(--bg-primary);
-    border: 1px solid var(--border-color);
-    border-radius: 4px;
+    border-left: 4px solid var(--primary-color);
+    padding-left: 20px;
 }
 
 .event-date {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 .date-year {
     display: block;
-    font-size: 1.6rem;
-    font-weight: 600;
-    color: var(--text-primary);
-    margin-bottom: 5px;
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: var(--primary-color);
+    line-height: 1;
+    letter-spacing: -2px;
+    margin-bottom: 10px;
+}
+
+.date-row {
+    display: flex;
+    gap: 15px;
+    align-items: baseline;
 }
 
 .date-month {
-    font-size: 1.2rem;
+    font-size: 1.8rem;
     color: var(--text-primary);
-    font-weight: 500;
+    font-weight: 700;
 }
 
 .date-day {
-    font-size: 1.1rem;
+    font-size: 1.4rem;
     color: var(--text-secondary);
+    font-weight: 400;
 }
 
 .event-location {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    font-size: 1rem;
+    font-size: 1.2rem;
     color: var(--text-primary);
-    font-weight: 500;
+    font-weight: 600;
+    letter-spacing: 1px;
 }
 
 .hero-image {
-    border-radius: 4px;
+    border-radius: 2px;
     overflow: hidden;
     box-shadow: var(--card-shadow);
 }
 
 .hero-img {
     width: 100%;
-    height: 250px;
+    height: 280px;
     object-fit: cover;
     display: block;
 }
 
 .section-title {
-    font-size: 1.4rem;
-    font-weight: 600;
+    font-size: 2rem;
+    font-weight: 800;
     color: var(--text-primary);
-    text-align: center;
-    margin-bottom: 25px;
+    margin-bottom: 30px;
     padding-bottom: 15px;
-    border-bottom: 2px solid var(--text-primary);
+    border-bottom: 3px solid var(--primary-color);
+    letter-spacing: -0.5px;
 }
 
 .details-section {
-    padding: 30px 20px;
+    padding: 40px 20px;
     background: var(--bg-secondary);
 }
 
 .details-content {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 20px;
 }
 
 .detail-card {
     background: var(--bg-primary);
-    padding: 20px;
-    border-radius: 4px;
+    padding: 25px;
+    border-radius: 2px;
     box-shadow: var(--card-shadow);
     border: 1px solid var(--border-color);
-    transition: all 0.2s ease;
+    transition: all 0.3s ease;
+}
+
+.detail-card-right {
+    margin-left: 20px;
 }
 
 .detail-card:hover {
     box-shadow: var(--hover-shadow);
+    transform: translateX(5px);
 }
 
 .detail-text h3 {
-    font-size: 1.1rem;
-    font-weight: 600;
+    font-size: 1.4rem;
+    font-weight: 700;
     color: var(--text-primary);
-    margin-bottom: 8px;
+    margin-bottom: 10px;
+    letter-spacing: -0.3px;
 }
 
 .detail-text p {
-    font-size: 0.95rem;
+    font-size: 1rem;
     color: var(--text-secondary);
-    line-height: 1.5;
+    line-height: 1.6;
+    font-weight: 400;
 }
 
 .videos-section {
-    padding: 30px 20px;
+    padding: 40px 20px;
     background: var(--bg-primary);
 }
 
 .video-list {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 25px;
 }
 
 .video-item {
     background: var(--bg-primary);
-    border-radius: 4px;
+    border-radius: 2px;
     overflow: hidden;
     box-shadow: var(--card-shadow);
     border: 1px solid var(--border-color);
-    transition: all 0.2s ease;
+    transition: all 0.3s ease;
+}
+
+.video-item-right {
+    margin-left: 15px;
 }
 
 .video-item:hover {
     box-shadow: var(--hover-shadow);
+    transform: translateX(5px);
 }
 
 .video-thumbnail {
     position: relative;
     width: 100%;
-    height: 180px;
+    height: 200px;
     overflow: hidden;
 }
 
@@ -204,60 +223,62 @@ body {
 }
 
 .video-info {
-    padding: 15px 18px;
+    padding: 20px;
 }
 
 .video-tag {
     display: inline-block;
-    padding: 3px 10px;
-    background: var(--text-primary);
+    padding: 4px 12px;
+    background: var(--primary-color);
     color: white;
-    font-size: 0.75rem;
-    font-weight: 500;
-    border-radius: 2px;
-    margin-bottom: 8px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    border-radius: 1px;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
 }
 
 .video-title {
-    font-size: 1rem;
-    font-weight: 600;
+    font-size: 1.2rem;
+    font-weight: 700;
     color: var(--text-primary);
     line-height: 1.4;
+    letter-spacing: -0.3px;
 }
 
 .footer {
     background: var(--bg-primary);
-    padding: 30px 20px;
-    text-align: center;
-    border-top: 1px solid var(--border-color);
+    padding: 40px 20px;
+    text-align: left;
+    border-top: 2px solid var(--primary-color);
 }
 
 .footer-content {
     max-width: 400px;
-    margin: 0 auto;
 }
 
 .footer-logo {
-    font-size: 1.3rem;
-    font-weight: 600;
+    font-size: 1.8rem;
+    font-weight: 800;
     color: var(--text-primary);
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+    letter-spacing: -0.5px;
 }
 
 .footer-links {
     display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-bottom: 20px;
+    gap: 25px;
+    margin-bottom: 25px;
     flex-wrap: wrap;
 }
 
 .footer-link {
     color: var(--text-primary);
     text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: 500;
+    font-size: 0.95rem;
+    font-weight: 600;
     transition: color 0.2s ease;
+    letter-spacing: 0.3px;
 }
 
 .footer-link:hover {
@@ -267,44 +288,55 @@ body {
 .footer-copyright {
     font-size: 0.85rem;
     color: var(--text-secondary);
-    padding-top: 15px;
+    padding-top: 20px;
     border-top: 1px solid var(--border-color);
+    font-weight: 400;
 }
 
 @media (max-width: 375px) {
     .logo h1 {
-        font-size: 1.5rem;
+        font-size: 2rem;
     }
     
     .logo .subtitle {
-        font-size: 0.75rem;
+        font-size: 0.8rem;
+        letter-spacing: 3px;
     }
     
     .date-year {
-        font-size: 1.4rem;
+        font-size: 2.8rem;
     }
     
     .date-month {
-        font-size: 1.1rem;
+        font-size: 1.5rem;
     }
     
-    .section-title {
+    .date-day {
         font-size: 1.2rem;
     }
     
+    .section-title {
+        font-size: 1.6rem;
+    }
+    
     .hero-img {
-        height: 200px;
+        height: 220px;
     }
     
     .video-thumbnail {
-        height: 160px;
+        height: 170px;
+    }
+    
+    .detail-card-right,
+    .video-item-right {
+        margin-left: 0;
     }
 }
 
 @media (min-width: 768px) {
     .container {
-        max-width: 480px;
+        max-width: 500px;
         margin: 0 auto;
-        box-shadow: 0 0 30px rgba(0, 0, 0, 0.05);
+        box-shadow: 0 0 40px rgba(0, 0, 0, 0.04);
     }
 }
