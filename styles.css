@@ -11,6 +11,9 @@
     --text-secondary: #666;
     --bg-primary: #fff;
     --bg-secondary: #fafafa;
+    --bg-gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --bg-gradient-2: linear-gradient(120deg, #f093fb 0%, #f5576c 100%);
+    --bg-gradient-3: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
     --border-color: #e5e5e5;
     --card-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
     --hover-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
@@ -18,10 +21,24 @@
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
-    background: var(--bg-secondary);
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
     color: var(--text-primary);
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
+}
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 .container {
@@ -29,13 +46,71 @@ body {
     margin: 0 auto;
     background: var(--bg-primary);
     min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.container::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 122, 69, 0.05) 0%, transparent 70%);
+    animation: float 20s ease-in-out infinite;
+}
+
+.container::after {
+    content: '';
+    position: absolute;
+    bottom: -50%;
+    left: -50%;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(102, 126, 234, 0.05) 0%, transparent 70%);
+    animation: float 25s ease-in-out infinite reverse;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    33% {
+        transform: translate(30px, -30px) rotate(120deg);
+    }
+    66% {
+        transform: translate(-20px, 20px) rotate(240deg);
+    }
 }
 
 .header {
-    background: var(--bg-primary);
+    background: linear-gradient(135deg, #fff 0%, #fff5f0 100%);
     padding: 40px 20px 30px;
     text-align: left;
     border-bottom: 2px solid var(--primary-color);
+    position: relative;
+    overflow: hidden;
+}
+
+.header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 60%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 122, 69, 0.05) 0%, transparent 70%);
+    animation: rotate 30s linear infinite;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 .logo h1 {
@@ -57,7 +132,32 @@ body {
 
 .hero {
     padding: 40px 20px;
-    background: var(--bg-primary);
+    background: linear-gradient(135deg, #fff5f0 0%, #fff 50%, #f0f5ff 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(circle at 20% 80%, rgba(255, 122, 69, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(102, 126, 234, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(245, 87, 108, 0.05) 0%, transparent 40%);
+    animation: pulse 8s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
 }
 
 .hero-content {
@@ -164,7 +264,36 @@ body {
 
 .details-section {
     padding: 40px 20px;
-    background: var(--bg-secondary);
+    background: linear-gradient(180deg, #fafafa 0%, #f0f4f8 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.details-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        repeating-linear-gradient(
+            45deg,
+            transparent,
+            transparent 10px,
+            rgba(255, 122, 69, 0.02) 10px,
+            rgba(255, 122, 69, 0.02) 20px
+        );
+    animation: patternMove 20s linear infinite;
+}
+
+@keyframes patternMove {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 100px 100px;
+    }
 }
 
 .details-content {
@@ -174,12 +303,30 @@ body {
 }
 
 .detail-card {
-    background: var(--bg-primary);
+    background: linear-gradient(135deg, #fff 0%, #fafafa 100%);
     padding: 25px;
     border-radius: 2px;
     box-shadow: var(--card-shadow);
     border: 1px solid var(--border-color);
     transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.detail-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--bg-gradient-1);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.detail-card:hover::before {
+    opacity: 1;
 }
 
 .detail-card-right {
@@ -208,7 +355,22 @@ body {
 
 .videos-section {
     padding: 40px 20px;
-    background: var(--bg-primary);
+    background: linear-gradient(135deg, #fff 0%, #f8f9ff 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.videos-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(circle at 10% 20%, rgba(79, 172, 254, 0.06) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(0, 242, 254, 0.06) 0%, transparent 40%);
+    animation: float 15s ease-in-out infinite;
 }
 
 .video-list {
@@ -218,12 +380,29 @@ body {
 }
 
 .video-item {
-    background: var(--bg-primary);
+    background: linear-gradient(135deg, #fff 0%, #f8f9ff 100%);
     border-radius: 2px;
     overflow: hidden;
     box-shadow: var(--card-shadow);
     border: 1px solid var(--border-color);
     transition: all 0.3s ease;
+    position: relative;
+}
+
+.video-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--bg-gradient-3);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.video-item:hover::before {
+    opacity: 1;
 }
 
 .video-item-right {
