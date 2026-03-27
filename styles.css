@@ -63,12 +63,16 @@ body {
 .hero-content {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 20px;
+    align-items: center;
 }
 
 .hero-cta {
     text-align: center;
-    margin-top: 10px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 10;
 }
 
 .cta-button {
