@@ -5,8 +5,8 @@
 }
 
 :root {
-    --primary-color: #000;
-    --secondary-color: #333;
+    --primary-color: #ff7a45;
+    --secondary-color: #ff9a6b;
     --text-primary: #000;
     --text-secondary: #666;
     --bg-primary: #fff;
@@ -64,6 +64,30 @@ body {
     display: flex;
     flex-direction: column;
     gap: 30px;
+}
+
+.hero-cta {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.cta-button {
+    display: inline-block;
+    background: var(--primary-color);
+    color: white;
+    padding: 16px 32px;
+    border-radius: 2px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+}
+
+.cta-button:hover {
+    background: var(--secondary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 122, 69, 0.3);
 }
 
 .event-info {
